@@ -1,0 +1,45 @@
+@CoreWebApiApp_HostAddress = http://localhost:5020
+
+GET {{CoreWebApiApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+### Get All Products
+GET {{CoreWebApiApp_HostAddress}}/api/Product
+Accept: application/json
+###
+
+### Get Product with Id 1
+GET {{CoreWebApiApp_HostAddress}}/api/Product/1
+Accept: application/json
+###
+
+### Create new Product (uses ProductCreateDTO)
+POST {{CoreWebApiApp_HostAddress}}/api/Product
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Name": "New Product",
+    "Price" : 45.55,
+    "CategoryId": 1
+}
+###
+
+### Update product (uses ProductUpdateDTO)
+PUT {{CoreWebApiApp_HostAddress}}/api/Product/2
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Id": 2,
+    "Name": "Updated Product",
+    "Price": 1000.45,
+    "CategoryId" : 2
+}
+
+###
+
+### Delete Product
+DELETE {{CoreWebApiApp_HostAddress}}/api/Product/3
+Accept: application/json
+###

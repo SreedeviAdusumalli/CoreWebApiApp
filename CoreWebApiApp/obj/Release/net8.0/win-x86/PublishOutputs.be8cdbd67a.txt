@@ -1,0 +1,11 @@
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\CoreWebApiApp.exe
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\appsettings.Development.json
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\appsettings.json
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\CoreWebApiApp.dll
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\CoreWebApiApp.deps.json
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\CoreWebApiApp.runtimeconfig.json
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\CoreWebApiApp.pdb
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.OpenApi.dll
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Sree_Dotnet\CoreWebApiApp\CoreWebApiApp\obj\Release\net8.0\win-x86\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

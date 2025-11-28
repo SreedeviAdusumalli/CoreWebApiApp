@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Ro6fL+WiX4TskCr+04zNLsm9+ksbMkcDUBurt6DCrZQ=",
+  "Source": "CoreWebApiApp",
+  "BasePath": "_content/CoreWebApiApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
