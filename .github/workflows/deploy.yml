@@ -1,0 +1,44 @@
+name: Deploy to AWS Elastic Beanstalk
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build project
+      run: dotnet build --no-restore
+
+    - name: Run tests
+      run: dotnet test --no-build
+
+    - name: Publish project
+      run: dotnet publish -c Release -o ./publish
+
+    - name: Zip publish folder
+      run: zip -r app.zip ./publish
+
+    - name: Deploy to AWS Elastic Beanstalk
+      uses: einaregilsson/beanstalk-deploy@v21
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        region: ${{ secrets.AWS_REGION }}
+        application: ${{ secrets.EB_APPLICATION }}
+        environment: ${{ secrets.EB_ENVIRONMENT }}
+        version_label: github-${{ github.run_number }}
+        deployment_package: app.zip
