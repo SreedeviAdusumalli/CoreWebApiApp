@@ -38,7 +38,7 @@ jobs:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         region: ${{ secrets.AWS_REGION }}
-        application: ${{ secrets.EB_APPLICATION }}
-        environment: ${{ secrets.EB_ENVIRONMENT }}
+        application_name: ${{ secrets.EB_APPLICATION }}
+        environment_name: ${{ secrets.EB_ENVIRONMENT }}
         version_label: github-${{ github.run_number }}
         deployment_package: app.zip
