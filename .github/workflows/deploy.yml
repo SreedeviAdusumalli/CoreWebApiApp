@@ -1,37 +1,48 @@
-name: Deploy to AWS Elastic Beanstalk
+name: Deploy .NET 8 App to AWS Elastic Beanstalk
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main  # Trigger on pushes to main branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+    # 1️⃣ Checkout code
     - name: Checkout code
       uses: actions/checkout@v3
 
+    # 2️⃣ Setup .NET 8 SDK
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0'
 
+    # 3️⃣ Restore NuGet packages
     - name: Restore dependencies
       run: dotnet restore
 
+    # 4️⃣ Build project
     - name: Build project
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore --configuration Release
 
+    # 5️⃣ Run unit tests (optional)
     - name: Run tests
-      run: dotnet test --no-build
+      run: dotnet test --no-build --verbosity normal
 
+    # 6️⃣ Publish project (compiled output)
     - name: Publish project
       run: dotnet publish -c Release -o ./publish
 
+    # 7️⃣ Zip publish folder (compiled files)
     - name: Zip publish folder
-      run: zip -r app.zip ./publish
+      run: |
+        cd publish
+        zip -r ../app.zip *
 
+    # 8️⃣ Deploy to AWS Elastic Beanstalk
     - name: Deploy to AWS Elastic Beanstalk
       uses: einaregilsson/beanstalk-deploy@v21
       with:
@@ -42,3 +53,4 @@ jobs:
         environment_name: ${{ secrets.EB_ENVIRONMENT }}
         version_label: github-${{ github.run_number }}
         deployment_package: app.zip
+        wait_for_deployment: true
